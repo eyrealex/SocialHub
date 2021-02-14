@@ -14,7 +14,6 @@ Rails.application.configure do
   #ensure default url options is configured for the implementation of devise authentication gem
      config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-     
   # Show full error reports.
   config.consider_all_requests_local = true
 

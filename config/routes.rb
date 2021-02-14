@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :accounts
   get 'home/index'
 
   #set the home#index as the landing page for the website
