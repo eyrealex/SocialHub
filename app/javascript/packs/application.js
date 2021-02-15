@@ -9,6 +9,10 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 require("bootstrap")
+require 'rake/dsl_definition'
+require jquery
+require jquery_ujs
+require tree
 
 Rails.start()
 Turbolinks.start()

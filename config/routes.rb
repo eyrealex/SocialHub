@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   devise_for :accounts
-  get 'home/index'
+  
+  devise_scope :account do
+    get '/accounts/sign_out' => 'devise/sessions#destroy'
+  end
 
-  #set the home#index as the landing page for the website
-  root 'home#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+resources :communities
+get 'home/index'
+
+#set the home#index as the landing page for the website
+root 'home#index'
+
 end
