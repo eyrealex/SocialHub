@@ -28,12 +28,12 @@
       Left col (wide)
     </div>
     <div class="col-4">
-      <p class ="h5 mb-4">Communities</p>
+      <p class="h5 mb-4">Communities</p>
       <div class="card">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">ffwefeawfwa</li>
-          <li class="list-group-item">ggggggggggggggg</li>
-          <li class="list-group-item">555555555555555</li>
+          <% @communities.each do |community| %>
+            <li class="list-group-item"><%= link_to community.name, community_path(community)%></li>
+          <% end %>
         </ul>
       </div>
 
