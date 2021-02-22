@@ -18,17 +18,23 @@
       Trending 4
     </div>
   </div>
-  <div class="row">
+  <div class="row mt-4">
     <div class="col">
       <p class="h5">Popular posts</p>
     </div>
   </div>
   <div class="row">
     <div class="col-8">
-      Left col (wide)
+      <% @posts.each do |post| %>
+        <div class="card p-3">
+          <h4><%= link_to post.title, community_post_path(post.community_id, post)%></h4>
+          <p><%= truncate post.body, length: 200%></p>
+        </div>
+
+      <%end%>
     </div>
     <div class="col-4">
-      <p class="h5 mb-4">Communities</p>
+      <p class="h5 mb-4">Top 5 Popular Communitites</p>
       <div class="card">
         <ul class="list-group list-group-flush">
           <% @communities.each do |community| %>

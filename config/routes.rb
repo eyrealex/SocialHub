@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
 resources :communities do
-resources :posts
+  resources :posts
 end
 get 'home/index'
 
