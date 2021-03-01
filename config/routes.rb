@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :accounts
 
+  get "u/:username" => "profile#index", as: :profile
+
   devise_scope :account do
     get '/accounts/sign_out' => 'devise/sessions#destroy'
   end
