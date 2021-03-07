@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_19_113318) do
+ActiveRecord::Schema.define(version: 2021_03_06_183524) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "first_name"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 2021_02_19_113318) do
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.integer "accounts_id"
+    t.integer "post_id"
+    t.text "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["accounts_id"], name: "index_comments_on_accounts_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
+  end
+
   create_table "communities", force: :cascade do |t|
     t.integer "account_id"
     t.string "name"
@@ -36,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_02_19_113318) do
     t.integer "total_members"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "description"
     t.index ["account_id"], name: "index_communities_on_account_id"
   end
 
@@ -50,6 +61,15 @@ ActiveRecord::Schema.define(version: 2021_02_19_113318) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["account_id"], name: "index_posts_on_account_id"
     t.index ["community_id"], name: "index_posts_on_community_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer "account_id"
+    t.integer "community_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_subscriptions_on_account_id"
+    t.index ["community_id"], name: "index_subscriptions_on_community_id"
   end
 
   create_table "users", force: :cascade do |t|

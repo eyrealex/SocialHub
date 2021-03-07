@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 resources :communities do
   resources :posts
 end
+
+resources :subscriptions
+resources :comments, only: [:create]
 get 'home/index'
 
 #set the home#index as the landing page for the website

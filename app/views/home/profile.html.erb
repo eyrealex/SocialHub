@@ -1,8 +1,14 @@
 <div class="row">
   <div class="col-sm-8">
-    Test data
+    <%= render partial: "posts/list", locals: {posts: @posts} %>
   </div>
-    <div class="col-sm-4">
-      <%= @profile.username %>
-    </div>
+  <div class="col-sm-4">
+    <p class="h4"><%= @profile.full_name %></p>
+    <p><%= @profile.username %></p>
+    <p>This is a bio for the user. opwjifweojfowjefjoewjfowjfopwepofjoewj
+      fowejfojweofjwoefjowejfowjefowjfowjefojweofjwoefjowefjewofjowjefojwefowjefo</p>
+
+    <p>Account created:
+      <%= @profile.created_at.strftime("%d/%m/%Y") %></p>
   </div>
+</div>
