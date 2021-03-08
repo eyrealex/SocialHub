@@ -4,7 +4,7 @@ class Account < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          has_many :posts
-         has_many :communities
+         has_many :communities, through: :subscriptions
          has_many :subscriptions
          has_many :comments
 

@@ -12,8 +12,8 @@ resources :communities do
 end
 
 resources :subscriptions
-resources :comments, only: [:create]
-get 'home/index'
+resources :comments, only: [:create], defaults: { format: 'js' }
+
 
 #set the home#index as the landing page for the website
 root 'home#index'
