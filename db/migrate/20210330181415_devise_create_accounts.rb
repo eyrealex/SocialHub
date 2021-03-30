@@ -7,7 +7,7 @@ class DeviseCreateAccounts < ActiveRecord::Migration[6.1]
       t.string :first_name
       t.string :last_name
       t.string :username
-      t.string :bio
+      t.text :bio
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
