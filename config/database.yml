@@ -12,13 +12,13 @@ default: &default
 development:
   <<: *default
   adapter: postgresql
-  encoding: unicode
-  database: db/socialhub-development
+  encoding: UTF-8
+  host: localhost
+  database: socialhub_development
   pool: 5
-  username: aeyre
-  password: 'Dcshoecousa08971!'
-  timeout: 5000
-  port: 5432
+  username: alexeyre
+  password: 'password123'
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,18 +27,17 @@ test:
   <<: *default
   adapter: postgresql
   encoding: unicode
-  database: db/socialhub-test
+  database: socialhub_test
   pool: 5
   username: alexeyre
-  password:
-  timeout: 5000
+  #password:
+
 
 production:
   <<: *default
   adapter: postgresql
   encoding: unicode
-  database: db/socialhub-production
+  database: socialhub_production
   pool: 5
-  username: alexeyre
-  password:
-  timeout: 5000
+  #username: alex_eyre
+  #password:
