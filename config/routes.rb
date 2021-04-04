@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
 resources :communities do
   resources :posts
+  collection do
+    get :search # creates a new path for search input
+  end
 end
 
 resources :tweets

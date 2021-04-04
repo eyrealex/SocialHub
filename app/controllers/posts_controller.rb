@@ -4,7 +4,12 @@ class PostsController < ApplicationController
   before_action :auth_subscriber, only: [:new]
 
   def index
-    @posts = Post.search(params[:search])
+    @posts = Post.all
+    @search = params["search"]
+    if @search.present?
+      @title = @search["title"]
+      @posts = Post.where(title: @title)
+    end 
   end
 
   def show

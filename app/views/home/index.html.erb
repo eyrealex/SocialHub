@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col">
+    <%= form_tag search_communities_path, method: :get do %>
+    <%= text_field_tag :search, nil, placeholder: "Search communities..." %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
   <p class="h5">Popular posts</p>
-  <%= form_tag(root_path, method: :get) do %>
-  <%= text_field_tag(:search, params[:search]) %>
-  <%= submit_tag("Search") %>
-<% end %>
 </div>
 </div>
 <div class="row">
@@ -25,7 +25,7 @@
   <p class="h5 mb-4 mt-4">Twitter Hashtags</p>
   <div class="card">
     <ul class="list-group list-group-flush">
-        <li class="list-group-item"><%= link_to "#SpaceX", home_spacex_path %></li>
+      <li class="list-group-item"><%= link_to "#SpaceX", home_spacex_path %></li>
     </ul>
   </div>
 

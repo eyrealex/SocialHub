@@ -8,6 +8,8 @@ gem 'rss'
 
 gem 'twitter'
 
+gem 'simple_form'
+
 # needed to perform tests
 gem 'rexml'
 

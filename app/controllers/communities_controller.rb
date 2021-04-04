@@ -1,5 +1,5 @@
 class CommunitiesController < ApplicationController
-  before_action :authenticate_account!, except: [ :index, :show ]
+  before_action :authenticate_account!, except: [ :index, :show, :search ]
   before_action :set_community, only: [:show]
 
   def index
@@ -25,6 +25,14 @@ class CommunitiesController < ApplicationController
       redirect_to communities_path
     else
       render :new
+    end
+  end
+
+  def search
+    if params[:search].blank?
+      @communities = Community.all
+    else
+      @communities = Community.search(params)
     end
   end
 
