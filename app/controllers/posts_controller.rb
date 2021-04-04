@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :auth_subscriber, only: [:new]
 
   def index
-    @posts = Post.all
+    @posts = Post.search(params[:search])
   end
 
   def show
@@ -30,6 +30,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def post_params
+    params.require(:post).permit(:title, :post_id, :search)
+  end
 
   def set_post
     @post = Post.includes(:comments).find(params[:id])

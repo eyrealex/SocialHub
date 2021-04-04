@@ -37,7 +37,7 @@ production:
   <<: *default
   adapter: postgresql
   encoding: unicode
-  database: socialhub_production
+  database: <%= ENV['DATABASE_URL'] &>
   pool: 5
   #username: alex_eyre
   #password:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_30_181415) do
+ActiveRecord::Schema.define(version: 2021_03_31_164415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 2021_03_30_181415) do
     t.integer "total_comments", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "upvotes"
+    t.integer "downvotes"
     t.index ["account_id"], name: "index_posts_on_account_id"
     t.index ["community_id"], name: "index_posts_on_community_id"
   end
@@ -73,6 +75,16 @@ ActiveRecord::Schema.define(version: 2021_03_30_181415) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["account_id"], name: "index_subscriptions_on_account_id"
     t.index ["community_id"], name: "index_subscriptions_on_community_id"
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.bigint "account_id"
+    t.bigint "post_id"
+    t.boolean "upvote"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_votes_on_account_id"
+    t.index ["post_id"], name: "index_votes_on_post_id"
   end
 
 end
