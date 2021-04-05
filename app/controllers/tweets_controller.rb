@@ -1,8 +1,6 @@
 class TweetsController < ApplicationController
-  before_action :show
-
+  before_action :index
   def index
-    @tweets = Tweet.api_call
+    @tweets = Tweet.spacex
   end
-
 end

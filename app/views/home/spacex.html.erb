@@ -2,7 +2,6 @@
 
 <% @tweets.each do |tweet| %>
   <tr>
-    <td><%= tweet.post %></td>
-    <td><%= tweet.extract_tags %></td>
+    <td><%= tweet.full_text %></td>
   </tr>
 <% end %>
