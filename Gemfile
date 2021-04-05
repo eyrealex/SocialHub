@@ -8,6 +8,10 @@ gem 'rss'
 
 gem 'twitter'
 
+#for the rss reader
+gem 'feedjira'
+gem 'twitter-bootstrap-rails'
+
 gem 'simple_form'
 
 # needed to perform tests

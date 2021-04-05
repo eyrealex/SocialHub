@@ -23,12 +23,15 @@
   <%= link_to "View all", communities_path, class: "btn btn-primary mt-2" %>
 
   <p class="h5 mb-4 mt-4">Recent 4 SpaceX Hashtags</p>
-    <% @tweets.each do |tweet| %>
-      <div class="card mt-3 pb-2 pt-2 pl-3 pr-3 mb-3">
-        <tr>
-          <td><%= tweet.full_text %></td>
-        </tr>
-      </div>
-    <% end %>
-</div>
+  <% @tweets.each do |tweet| %>
+    <div class="card mt-3 pb-2 pt-2 pl-3 pr-3 mb-3">
+      <tr>
+        <td><%= tweet.full_text %></td>
+      </tr>
+    </div>
+  <% end %>
+
+  <p class="h5 mb-4 mt-4">RSS Feed</p>
+    <div class="card mt-3 pb-2 pt-2 pl-3 pr-3 mb-3">
+    </div>
 </div>
