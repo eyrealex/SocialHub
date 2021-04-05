@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_05_153417) do
+ActiveRecord::Schema.define(version: 2021_04_05_154000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,17 @@ ActiveRecord::Schema.define(version: 2021_04_05_153417) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
     t.index ["account_id"], name: "index_communities_on_account_id"
+  end
+
+  create_table "entries", force: :cascade do |t|
+    t.string "title"
+    t.datetime "published"
+    t.text "content"
+    t.string "url"
+    t.string "author"
+    t.integer "feed_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "feeds", force: :cascade do |t|

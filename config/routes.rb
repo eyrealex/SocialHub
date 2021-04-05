@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :feeds
+
+  resources :feeds do
+    member do
+      resources :entries, only: [:index, :show]
+    end
+  end
   devise_for :accounts
 
   get "u/:username" => "home#profile", as: :profile
@@ -25,8 +30,8 @@ get 'articles.rss', to: 'articles#index', :format => 'rss'
 
 
 #set the home#index as the landing page for the website
-#root 'home#index'
-root 'feeds#index'
+root 'home#index'
+#root 'feeds#index'
 
 
 end

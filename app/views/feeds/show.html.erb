@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @feed.name %>
-</p>
+<h2>
+  <strong><%= @feed.name %></strong>
+</h2>
+<div class="col-11">
+  <div class="card mt-3 mb-2 pl-3 pr-3 pt-3 pb-2">
+    <p>
+      <strong>Url:</strong>
+      <%= link_to @feed.url, url_for(@feed.url)%>
+    </p>
+    <p>
+      <strong>Description:</strong>
+      <%= @feed.description %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <strong>Url:</strong>
-  <%= @feed.url %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @feed.description %>
-</p>
-
-<%= link_to 'Edit', edit_feed_path(@feed) %> |
+<%= link_to 'Edit', edit_feed_path(@feed) %>
+|
 <%= link_to 'Back', feeds_path %>
+<p class="mt-2"></p>
