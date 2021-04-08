@@ -5,11 +5,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 # for the twitter api external data source
 gem 'twitter'
-
-gem 'obscenity'
-
-gem 'profanitygem'
-
 # for the rss reader external data source
 gem 'feedjira'
 gem 'twitter-bootstrap-rails'
