@@ -5,10 +5,10 @@ class HomeController < ApplicationController
     @tweets = Tweet.spacex #to show the tweets on the home index page
   end
 
+
   def profile
-    @profile  = Account.find_by_username params[:username]
+    @profile  = Account.find_by_username(params[:username])
     @posts = @profile.posts
   end
-
 
 end

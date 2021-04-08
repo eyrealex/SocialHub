@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     if @search.present?
       @title = @search["title"]
       @posts = Post.where(title: @title)
-    end 
+    end
   end
 
   def show
