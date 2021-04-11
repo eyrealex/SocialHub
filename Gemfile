@@ -9,8 +9,6 @@ gem 'twitter'
 gem 'feedjira'
 gem 'twitter-bootstrap-rails'
 gem 'blacklistergem'
-# needed for the decorator design pattern
-gem 'draper'
 # needed to perform tests
 gem 'rexml'
 # adding authentication with devise gem
@@ -19,6 +17,7 @@ gem 'devise'
 gem 'rails', '~> 6.1.1'
 # for a postgresql database instead of sql lite
 gem 'pg'
+#gem 'sqlite3', '~> 1.4'
 gem 'therubyracer', :platforms => :ruby
 # Use Puma as the app server
 gem 'puma', '~> 5.0'

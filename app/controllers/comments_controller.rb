@@ -1,4 +1,3 @@
-require 'blacklistergem'
 class CommentsController < ApplicationController
 
   def create
