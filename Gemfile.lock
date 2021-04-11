@@ -69,7 +69,7 @@ GEM
     bcrypt (3.1.16)
     bindex (0.8.1)
     blacklistergem (0.2.1)
-    bootsnap (1.4.9)
+    bootsnap (1.7.3)
       msgpack (~> 1.0)
     buftok (0.2.0)
     builder (3.2.4)
@@ -288,7 +288,7 @@ PLATFORMS
 
 DEPENDENCIES
   blacklistergem
-  bootsnap (~> 1.4.4)
+  bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
   devise
