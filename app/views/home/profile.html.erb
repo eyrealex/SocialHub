@@ -1,11 +1,18 @@
 <div class="row">
   <div class="col-sm-8">
-    <%= render partial: "posts/list", locals: {posts: @posts} %>
+
+    <% if (render partial: "posts/list", locals: {posts: @posts}).present? %>
+      <%= render partial: "posts/list", locals: {posts: @posts} %>
+    <% else %>
+      <p>No posts have been made by <%= @profile.full_name %></p>
+    <% end %>
+
   </div>
   <div class="col-sm-4">
     <p class="h4"><%= @profile.full_name %></p>
     <p><%= @profile.username %></p>
-    <p>This is a bio for the user. </p>
+    <p>This is a bio for the user.
+    </p>
 
     <p>Account created:
       <%= @profile.created_at.strftime("%d/%m/%Y") %></p>
