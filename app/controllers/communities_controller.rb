@@ -34,7 +34,7 @@ class CommunitiesController < ApplicationController
 
   def search
     if params[:search].blank?
-      @communities = Community.all
+      redirect_to root_path
     else
       @communities = Community.search(params)
     end
