@@ -16,6 +16,11 @@ class PostsController < ApplicationController
     @comment = Comment.new
   end
 
+  def edit
+    @community = Community.find(params[:community_id])
+    @post = Post.find(params[:account_id])
+  end
+
   def new
     @community = Community.find(params[:community_id])
     @post = Post.new
@@ -32,6 +37,13 @@ class PostsController < ApplicationController
       @community = Community.find(params[:community_id])
       render :new
     end
+  end
+
+  def destroy
+    @community = Community.find(params[:id])
+    @post = @community.posts.find(params[:id])
+    @post.destroy
+    redirect_to communities_path
   end
 
   private

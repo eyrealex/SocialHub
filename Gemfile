@@ -8,6 +8,7 @@ gem 'twitter'
 # for the rss reader external data source
 gem 'feedjira'
 gem 'twitter-bootstrap-rails'
+gem 'blacklistergem'
 # needed for the decorator design pattern
 gem 'draper'
 # needed to perform tests
