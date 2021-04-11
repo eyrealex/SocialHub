@@ -19,6 +19,7 @@ gem 'devise'
 gem 'rails', '~> 6.1.1'
 # for a postgresql database instead of sql lite
 gem 'pg'
+gem 'therubyracer', :platforms => :ruby
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
